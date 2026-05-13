@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between mb-3">
+    <h2>Employees</h2>
+
+    <a href="/employees/create/" class="btn btn-primary">
+        Add Employee
+    </a>
+</div>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Department</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for emp in employees %}
+    <tr>
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.phone }}</td>
+        <td>{{ emp.department }}</td>
+
+        <td>
+            <a href="/employees/update/{{ emp.id }}/" class="btn btn-warning btn-sm">
+                Edit
+            </a>
+
+            <a href="/employees/delete/{{ emp.id }}/" class="btn btn-danger btn-sm">
+                Delete
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

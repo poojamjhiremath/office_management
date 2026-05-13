@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Dashboard</h2>
+
+<div class="row mt-4">
+
+    <div class="col-md-4">
+        <div class="card bg-primary text-white p-4">
+            <h3>{{ employee_count }}</h3>
+            <p>Employees</p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card bg-success text-white p-4">
+            <h3>{{ customer_count }}</h3>
+            <p>Customers</p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
