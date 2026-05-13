@@ -2,18 +2,80 @@
 
 {% block content %}
 
-<h2>Employee Form</h2>
+<div class="row justify-content-center">
 
-<form method="POST">
+    <div class="col-md-7">
 
-    {% csrf_token %}
+        <div class="card shadow border-0">
 
-    {{ form.as_p }}
+            <div class="card-header bg-dark text-white">
 
-    <button class="btn btn-success">
-        Save
-    </button>
+                <h4>Employee Form</h4>
 
-</form>
+            </div>
+
+            <div class="card-body">
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+
+                        <label class="form-label fw-bold">
+                            Employee Name
+                        </label>
+
+                        {{ form.name }}
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label fw-bold">
+                            Date Of Joining
+                        </label>
+
+                        {{ form.joining_date }}
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label fw-bold">
+                            Department
+                        </label>
+
+                        {{ form.department }}
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <label class="form-label fw-bold">
+                            Salary
+                        </label>
+
+                        {{ form.salary }}
+
+                    </div>
+
+                    <button class="btn btn-success">
+                        Save Employee
+                    </button>
+
+                    <a href="/employees/" class="btn btn-secondary">
+                        Back
+                    </a>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 {% endblock %}
